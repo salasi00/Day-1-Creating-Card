@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>contact-form</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+
+    <body>
+        <nav>
+            <div class="item-left">
+                    <a href="index.html" class="imgLogo">
+                        <img src="assets/images/logoBrand.png" alt="logoBrand"/>
+                    </a>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">My Project</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item-right">
+                <a href="contact-form.html">Contact Me</a>
+            </div>
+        </nav>
+        <center>
+            <div class="form-contract">   
+                <div class="form-container">
+                    <form>
+                        <h1>Get in Touch</h1>
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text"  id="name" />
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email"/>
+                        </div>
+                        <div>
+                            <label for="telp">Phone Number</label>
+                            <input type="text" id="telp" />
+                </div>
+                <div>
+                    <label for="subject">Subject</label>
+                </div>
+                <div>
+                    <select id="subject">
+                        <option></option>
+                        <option>Frontend</option>
+                        <option>Backend</option>
+                        <option>Fullstack</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Your Message</label>
+                    <textarea id="message"></textarea>
+                </div>
+                <div class="submitBtn">
+                    <button type="button" onclick="submitForm()">Submit</button>
+                </div>    
+            </form>
+        </center>
+        <script src="assets/js/contact-form.js"></script>
+        </body>
+</html>

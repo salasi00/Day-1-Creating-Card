@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <nav>
+            <div class="item-left">
+                    <a href="index.html" class="imgLogo">
+                        <img src="assets/images/logoBrand.png" alt="logoBrand"/>
+                    </a>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">My Project</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item-right">
+                <a href="contact-form.html">Contact Me</a>
+            </div>
+        </nav>
+
+        <!-- blog form -->
+        <div class="blog">
+            <div class="blog-form">
+                <div class="form-container">
+                    <form onsubmit="getData(event)">
+                        <h1>ADD MY PROJECT</h1>
+                        <div>
+                            <label for="input-project-name">Project Name</label>
+                            <input type="text" id="input-project-name"/>
+                        </div>
+                        <div class="input-date">
+                            <div class="start-date">
+                                <label for="input-start-date">Start Date</label>
+                                <input type="text" id="input-start-date">
+                            </div>
+                            <div>
+                                <label for="input-end-date">End Date</label>
+                                <input type="text" id="input-end-date">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="input-blog-contents">Description</label>
+                            <textarea id="input-blog-contents"></textarea>
+                        </div>
+                        <label>Technologies</label>
+                        <div class="input-checkbox">
+                            <div class="checkbox-left">
+                                <div class="checkbox-list">
+                                    <input type="checkbox" name="technologies" id="nodejs">
+                                    <label for="nodejs">Node JS</label>
+                                </div>
+                                <div class="checkbox-list">
+                                    <input type="checkbox" name="technologies" id="reactjs">
+                                    <label for="reactjs">React JS</label>
+                                </div>
+                            </div>
+                            <div class="checkbox-right">
+                                <div class="checkbox-list">
+                                    <input type="checkbox" name="technologies" id="nextjs">
+                                    <label for="nextjs">Next JS</label>
+                                </div>
+                                <div class="checkbox-list">
+                                    <input type="checkbox" name="technologies" id="typescript">
+                                    <label for="typescript">TypeScript</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Upload Image</label>  
+                            <div class="input-blog-image-group">
+                                <label for="input-blog-image">
+                                    <span class="upload-image-button">choose</span>
+                                    <i class="fa fa-paperclip fa-lg fa-fw"></i>
+                                </label>
+                                <input type="file" id="input-blog-image" hidden/>
+                            </div>                          
+                        </div>
+                        <div>
+                            <div class="button-group">
+                                <button class="submitBtn">Submit</button>
+                            </div> 
+                        </div>    
+                    </form>
+                </div>
+            </div>
+            <hr hidden/>
+            <div id="contents" class="project-list">
+            <div project-list-title>
+                    <h1>My Project</h1>
+            </div>
+                <div class="list-container">
+                    <div class="project-list-item">
+                        <div class="project-list-thumbnail">
+                            <img src="" alt=""/>
+                        </div>
+                        <div class="project-list-title">
+                            <h4>Dumbways Mobile App - 2021</h4>
+                            <p>durasi: 3 Bulan</p>
+                        </div>
+                        <div class="project-list-content">
+                            <p>App that used for dumbways student, 
+                            it was deployed and can be downloaded on playstore.
+                            Happy download</p>
+                        </div>
+                        <div>
+                            <span>
+                                
+                            </span>
+                            <span>
+                                
+                            </span>
+                            <span>
+                                
+                            </span>
+                        </div>
+                        <div class="list-input-container">
+                            <div>
+                                <button class="project-list-input">edit</button>
+                            </div>
+                            <div>
+                                <button  class="project-list-input">delete</button>
+                            </div >
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </body>
+    <script src="assets/js/blog.js"></script>
+</html>

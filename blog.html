@@ -1,100 +1,101 @@
 <html>
     <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/8df03967e2.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="assets/css/style.css">
         <title>My Project</title>
     </head>
     <body>
-        <nav>
-            <div class="item-left">
-                    <a href="index.html" class="imgLogo">
-                        <img src="assets/images/logoBrand.png" alt="logoBrand"/>
-                    </a>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">My Project</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="item-right">
-                <a href="contact-form.html">Contact Me</a>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand ps-5" href="index.html">
+                    <img src="assets/images/logoBrand.png" alt="logoBrand" width="50"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContents" aria-controls="navbarContents" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ps-4" id="navbarContents">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"  href="blog.html">Add Project</a>
+                        </li>
+                    </ul>
+                    <div class="nav-btn pe-5">
+                        <a class="btn btn-dark" href="contact-form.html" role="button">Contact Me</a>
+                    </div>
+                </div>
             </div>
         </nav>
 
         <!-- blog form -->
-        <div class="blog">
-            <div class="blog-form">
-                <div class="form-container">
-                    <form onsubmit="getData(event)">
-                        <h1>ADD MY PROJECT</h1>
-                        <div>
-                            <label for="input-project-name">Project Name</label>
-                            <input type="text" id="input-project-name"/>
-                        </div>
-                        <div class="input-date">
-                            <div class="start-date">
-                                <label for="input-start-date">Start Date</label>
-                                <input type="date" id="input-start-date">
-                            </div>
-                            <div>
-                                <label for="input-end-date">End Date</label>
-                                <input type="date" id="input-end-date">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="input-blog-contents">Description</label>
-                            <textarea id="input-blog-contents"></textarea>
-                        </div>
-                        <label>Technologies</label>
-                        <div class="input-checkbox">
-                            <div class="checkbox-left">
-                                <div class="checkbox-list">
-                                    <input type="checkbox" name="technologies" id="nodejs">
-                                    <label for="nodejs">Node JS</label>
-                                </div>
-                                <div class="checkbox-list">
-                                    <input type="checkbox" name="technologies" id="reactjs">
-                                    <label for="reactjs">React JS</label>
-                                </div>
-                            </div>
-                            <div class="checkbox-right">
-                                <div class="checkbox-list">
-                                    <input type="checkbox" name="technologies" id="nextjs">
-                                    <label for="nextjs">Next JS</label>
-                                </div>
-                                <div class="checkbox-list">
-                                    <input type="checkbox" name="technologies" id="typescript">
-                                    <label for="typescript">TypeScript</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <label>Upload Image</label>  
-                            <div class="input-blog-image-group">
-                                <label for="input-blog-image">
-                                    <span class="upload-image-button">choose</span>
-                                    <i class="fa fa-paperclip fa-lg fa-fw"></i>
-                                </label>
-                                <input type="file" id="input-blog-image" hidden/>
-                            </div>                          
-                        </div>
-                        <div>
-                            <div class="button-group">
-                                <button class="submitBtn">Submit</button>
-                            </div> 
-                        </div>    
-                    </form>
+        <div class="container d-flex justify-content-center align-item-center">
+            <form onsubmit="getData(event)" class="form-container w-50 mb-5">
+                <h1 class="my-5 pt-4 text-center fw-bold">ADD MY PROJECT</h1>
+                <div class="mb-4">
+                    <label for="input-project-name" class="form-label fs-4 fw-semibold">Project Name</label>
+                    <input type="text" class="form-control form-control-lg" id="input-project-name"/>
                 </div>
-            </div>
-            <div class="project-list">
-                <h1>MY PROJECT</h1>
-                <div id="contents" class="project-list-detail">
+                <div class="row mb-4">
+                    <div class="col">
+                        <label for="input-start-date" class="form-label fs-4 fw-semibold">Start Date</label>
+                        <input type="date"  class="form-control form-control-lg" id="input-start-date">
+                    </div>
+                    <div class="col">
+                        <label for="input-end-date" class="form-label fs-4 fw-semibold">End Date</label>
+                        <input type="date" class="form-control form-control-lg" id="input-end-date">
+                    </div>
                 </div>
-            </div>
+                <div class="mb-4">
+                    <label for="input-blog-contents" class="form-label fs-4 fw-semibold">Description</label>
+                    <textarea class="form-control form-control-lg" id="input-blog-contents" rows="4" style="resize: none;"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fs-4 fw-semibold">Technologies</label>
+                    <div class="d-flex gap-3 ps-3 fs-5">
+                        <div class="row">
+                            <div class="form-check pb-3">
+                                <input class="form-check-input" type="checkbox" name="technologies" id="nodejs">
+                                <label for="nodejs" class="form-check-label text-muted">Node JS</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="technologies" id="reactjs">
+                                <label for="reactjs" class="form-check-label text-muted">React JS</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-check pb-3">
+                                <input class="form-check-input" type="checkbox" name="technologies" id="nextjs">
+                                <label for="nextjs" class="from-check-label text-muted">Next JS</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="technologies" id="typescript">
+                                <label for="typescript" class="from-check-label text-muted">TypeScript</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fs-4 fw-semibold">Upload Image</label>  
+                    <div class="input-group w-100">
+                        <label role="button" class="input-group-text w-100 p-0" for="input-blog-image">
+                            <p class="my-auto py-2 px-2 border border-2 border-secondary-subtle rounded"  style="height: max-content; background-color: #e5e6e7de; color: rgb(194, 191, 191);">choose</p>
+                            <input class="form-control visually-hidden" type="file" title=" " id="input-blog-image" />
+                            <i class="fa fa-paperclip fa-lg fa-fw ms-auto"></i>
+                        </label>
+                    </div>                          
+                </div>
+                <div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-dark rounded-pill px-4 py-1">Submit</button>
+                    </div>    
+                </div>    
+            </form>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="assets/js/blog.js"></script>
 </html>

@@ -1,71 +1,81 @@
 <html>
     <head>
         <script src="https://kit.fontawesome.com/8df03967e2.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        <nav>
-            <div class="item-left">
-                    <a href="index.html" class="imgLogo">
-                        <img src="assets/images/logoBrand.png" alt="logoBrand"/>
-                    </a>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">My Project</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="item-right">
-                <a href="contact-form.html">Contact Me</a>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand ps-5" href="index.html">
+                    <img src="assets/images/logoBrand.png" alt="logoBrand" width="50"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContents" aria-controls="navbarContents" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ps-4" id="navbarContents">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item px-3">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Add Project</a>
+                        </li>
+                    </ul>
+                    <div class="nav-btn pe-5">
+                        <a class="btn btn-dark" href="contact-form.html" role="button">Contact Me</a>
+                    </div>
+                </div>
             </div>
         </nav>
-        <div  class="project-detail">
-            <h1>Dumbways Web App</h1>
-            <div class="project-detail-container">
-                <div class="project-detail-left">
-                    <img src="assets/images/apps.jpg" alt="">
+        <!-- Project Detail -->
+        <div  class="container-fluid">
+            <h1 class="fw-bold text-center my-5">Dumbways Web App</h1>
+            <div class="d-flex mx-5 gap-5 mb-5">
+                <div class="me-3">
+                    <img src="assets/images/apps.jpg" alt="" width="1250px" class="img-fluid me-5">
                 </div>
-                <div class="project-detail-right">
-                    <h2>Duration</h2>
-                    <div class="project-detail-right-time">
-                        <div>
-                            <i class='fas fa-calendar-alt' style='font-size:36px'></i>
-                            <label>12 Jan 2021 - 11 Feb 2021</label>
+                <div class="">
+                    <div class="mb-3">
+                        <h2 class="fw-bold">Duration</h2>
+                        <div class="pt-4 pb-3">
+                            <i class='fas fa-calendar-alt me-3' style='font-size: 50px;'></i>
+                            <label class="fs-4 fw-bold text-muted">12 Jan 2021 - 11 Feb 2021</label>
                         </div>
                         <div>
-                            <i class='far fa-clock' style='font-size:36px'></i>
-                            <label>1 month</label>
+                            <i class='far fa-clock me-3' style='font-size: 50px'></i>
+                            <label class="fs-4 fw-bold text-muted">1 month</label>
                         </div>
                     </div>
-                    <h2>Technologies</h2>
-                    <div class="project-detail-right-tech">
-                        <div class="project-detail-tech-left">
-                            <div>
-                                <i class='fab fa-react' style="font-size: 36px;"></i>
-                                <label>React Js</label>
+                <div class="mt-5">
+                    <h2 class="fw-bold">Technologies</h2>
+                    <div class="d-flex gap-3 py-4">
+                        <div class="row">
+                            <div class="pb-3">
+                                <img src="assets/images/reactjs.png" alt="" width="50px">
+                                <label class="fw-bold fs-5 text-muted ps-3">React Js</label>
                             </div>
                             <div>
-                                <i class='fab fa-node-js' style="font-size: 36px;"></i>
-                                <label>Node Js</label>
+                                <img src="assets/images/nodejs.png" alt="" width="50px">
+                                <label class="fw-bold fs-5 text-muted ps-3">Node Js</label>
                             </div>
                         </div>
-                        <div class="project-detail-tech-right">
-                            <div>
-                                <i class='fab fa-js-square' style='font-size:36px'></i>
-                                <label>JavaScript</label>
+                        <div class="row">
+                            <div class="pb-3">
+                                <img src="assets/images/javascript.png" alt="" width="50px">
+                                <label class="fw-bold fs-5 text-muted ps-3">JavaScript</label>
                             </div>
                             <div>
-                                <img src="assets/images/socket_io.png" alt="" style="width: 36px;">
-                                <label>Socket IO</label>
+                                <img src="assets/images/socket_io.png" alt="" width="50px">
+                                <label class="fw-bold fs-5 text-muted ps-3">Socket IO</label>
                             </div>    
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique purus orci libero egestas ut.
+            <p class="mx-5 fs-6 pb-5 mb-5" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique purus orci libero egestas ut.
                 Augue suspendisse blandit lorem massa ipsum, urna, egestas mi, lacinia. Dui fusce etiam libero,
                 lectus amet, risus molestie malesuada. Odio nam purus consectetur euismod congue leo quisque.
                 Turpis amed sollicitudin nunc non in lectus dolor amet. Amet ullamcorper faucibus tincidunt accumsan
@@ -95,4 +105,5 @@
                 </p>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>    

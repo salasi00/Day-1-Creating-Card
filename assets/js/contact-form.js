@@ -1,4 +1,3 @@
-//let name = 
 
 const emailReceiver = "bogeymanyolo@gmail.com";
 

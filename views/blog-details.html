@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>{{.Data.Title}}</title>
+        <script src="https://kit.fontawesome.com/8df03967e2.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="/public/assets/css/style.css">
+    </head>
+    <body>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand ps-5" href="/home">
+                    <img src="/public/assets/images/logoBrand.png" alt="logoBrand" width="50"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContents" aria-controls="navbarContents" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ps-4 fw-bold" id="navbarContents">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item px-3">
+                            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                        </li>
+                        {{if  .Data.IsLogin}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog">Add Project</a>
+                        </li>
+                        {{end}}
+                    </ul>
+                    <ul class="navbar-nav me-2">
+                        {{if  .Data.IsLogin}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hello, {{.Data.UserName}}</a>
+                        </li>
+                        <li class="nav-item px-4">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                        </li>
+                        <li class="nav-item px-4">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        {{end}}
+                    </ul>
+                    <div class="nav-btn pe-5">
+                        <a class="btn btn-dark" href="/contact-form" role="button">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Project Detail -->
+        <div  class="container-fluid">
+            <h1 class="fw-bold text-center my-5">{{.projectDetail.Title}}</h1>
+            <div class="d-flex ms-5 gap-5 mb-5">
+                <div class="me-2">
+                    <img src="/public/assets/images/apps.jpg" alt="" width="2300px" class="img-fluid me-5">
+                </div>
+                <div class="container fluid d-inline-block ms-5">
+                    <div class="mb-3">
+                        <h2 class="fw-bold">Duration</h2>
+                        <div class="d-flex pt-4 ps-1 pb-4 align-item-center">
+                            <i class='fas fa-calendar-alt me-3' style='font-size: 50px;'></i>
+                            <label class="fs-5 fw-bold text-muted pt-3">{{.projectDetail.StartDate.Format "02 Jan 2006"}} - {{.projectDetail.EndDate.Format "2 Jan 2006"}}</label>
+                        </div>
+                        <div class="d-flex pt-1">
+                            <i class='far fa-clock me-3' style='font-size: 50px'></i>
+                            <label class="fs-5 fw-bold text-muted pt-2">{{.projectDetail.Duration}}</label>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <h2 class="fw-bold">Technologies</h2>
+                        <div class="d-flex gap-3 py-4">
+                            <div class="d-flex flex-wrap gap-4">
+                                {{range $index, $data := .projectDetail.Technologies}}
+                                <div class="d-flex gap-3 align-item-center">
+                                    <img src="/public/assets/images/icon/icon-{{$data}}.png" alt="" width="50px">
+                                    {{if eq $data "reactjs"}}
+                                    <label class="fw-bold fs-5 text-muted pt-2">React Js</label>
+                                    {{else if eq $data "nodejs"}}
+                                    <label class="fw-bold fs-5 text-muted pt-2 pe-1">Node Js</label>
+                                    {{else if eq $data "nextjs"}}
+                                    <label class="fw-bold fs-5 text-muted pt-2 pe-3">Next Js</label>
+                                    {{else}}
+                                    <label class="fw-bold fs-5 text-muted pt-2">TypeScript</label>
+                                    {{end}}
+                                </div> 
+                                {{end}}   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="mx-5 fs-6 pb-5 mb-5" style="text-align: justify;">{{.projectDetail.Description}}</p>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>    
